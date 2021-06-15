@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedComponent } from './components/shared/shared.component';
 import { ListComponent } from './components/list/list.component';
+import { ResultsComponent } from './components/results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SharedComponent,
-    ListComponent
+    ListComponent,
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,
