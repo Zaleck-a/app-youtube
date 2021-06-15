@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-shared',
-  templateUrl: './shared.component.html',
+  selector: 'app-play',
+  templateUrl: './play.component.html',
   styles: [
   ]
 })
-export class SharedComponent implements OnInit {
+export class PlayComponent implements OnInit {
 
   constructor() { }
 

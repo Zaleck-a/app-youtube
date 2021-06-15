@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedComponent } from './components/shared/shared.component';
-import { ListComponent } from './components/list/list.component';
-import { ResultsComponent } from './components/results/results.component';
+import { ListComponent } from './shared/list/list.component';
+import { ResultsComponent } from './pages/results/results.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { PlayComponent } from './pages/play/play.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SharedComponent,
     ListComponent,
     ResultsComponent,
+    NavbarComponent,
+    PlayComponent,
   ],
   imports: [
     BrowserModule,
