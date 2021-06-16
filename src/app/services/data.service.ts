@@ -10,7 +10,7 @@ import { map } from "rxjs/operators";
 export class DataService {
 
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
-  private apiKey = 'AIzaSyAUWtvdPrUgrDo-tE9MjR3lHcfsUtV1pZw';
+  private apiKey = 'AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc';
   private search = 'thewekend';
   private nextPageToken = '';
 
@@ -22,7 +22,9 @@ export class DataService {
     const url = `${this.youtubeUrl}/search`
     const params = new HttpParams().set('part', 'snippet')
                                    .set('q', this.search)
+                                   .set('maxResults', '9')
                                    .set('key', this.apiKey)
+                                   .set('pageToken', this.nextPageToken)
 
 
     return this.http.get<YoutubeResponse>(url, { params })
