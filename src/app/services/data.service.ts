@@ -11,6 +11,7 @@ export class DataService {
 
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
   private apiKey = 'AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc';
+  //AIzaSyAUWtvdPrUgrDo-tE9MjR3lHcfsUtV1pZw
   private search = 'thewekend';
   private nextPageToken = '';
 

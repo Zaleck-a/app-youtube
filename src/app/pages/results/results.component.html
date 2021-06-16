@@ -1,23 +1,28 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let item of items">
+    <div class="col animate__animated animate__fadeIn" *ngFor="let item of items">
       <div class="card">
         <img (click)="viewVideo(item)" [src]="item.snippet.thumbnails.high.url" class="card-img-top cursor" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{item.snippet.title}}</h5>
+          <h5 class="title card-title">{{item.snippet.title}}</h5>
           <p class="card-text">{{item.snippet.channelTitle}}</p>
           <p class="card-text">{{item.snippet.publishTime | date}}</p>
-          <button (click)="viewVideo(item)" class="btn btn-outline-primary">
-            Ver video
-          </button>
+          
+          <div class="d-grid gap-2">
+            <button (click)="viewVideo(item)" class="btn btn-outline-dark">
+                Ver video
+            </button>
+          </div>
         </div>
       </div>
     </div>
     
 </div>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav>
+<div class="row mt-5 mb-5 text-center">
+    <div class="col">
+        <button class="btn btn-primary btn-lg"
+                (click)="getItems()">
+            Mas videos...
+        </button>
+    </div>
+</div>
