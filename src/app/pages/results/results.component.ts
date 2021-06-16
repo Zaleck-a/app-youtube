@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Video } from 'src/app/models/youtube.models';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-results',
@@ -8,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  videos: Video[] = [];
+
+  constructor( private data: DataService) { }
 
   ngOnInit(): void {
+    this.getVideos();
+  }
+
+  getVideos(){
+    this.data.getVideos().subscribe( res => {
+      this.videos.push( ...res );
+      console.log(res);
+    })
   }
 
 }
