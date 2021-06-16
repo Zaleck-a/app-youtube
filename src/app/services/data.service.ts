@@ -30,12 +30,7 @@ export class DataService {
                  map( resp => {
                    this.nextPageToken = resp.nextPageToken;
                    return resp.items
-                 }),
-                 map(
-                   items => {
-                      return items.map( video => video.snippet)
-                   }
-                 )
+                 })
                )
 
   }

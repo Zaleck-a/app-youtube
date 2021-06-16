@@ -1,12 +1,16 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col" *ngFor="let video of videos">
+    <div class="col" *ngFor="let item of items">
       <div class="card">
-        <img [src]="video.thumbnails.high.url" class="card-img-top" alt="...">
+        <img (click)="viewVideo(item)" [src]="item.snippet.thumbnails.high.url" class="card-img-top cursor" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{video.title}}</h5>
-          <p class="card-text">{{video.channelTitle}}</p>
-          <p class="card-text">{{video.publishTime | date}}</p>
+          <h5 class="card-title">{{item.snippet.title}}</h5>
+          <p class="card-text">{{item.snippet.channelTitle}}</p>
+          <p class="card-text">{{item.snippet.publishTime | date}}</p>
+          <button (click)="viewVideo(item)" class="btn btn-outline-primary">
+            Ver video
+          </button>
         </div>
       </div>
     </div>
+    
 </div>
