@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from "@angular/common/http";
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +23,10 @@ import { PlayComponent } from './pages/play/play.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule,
+    DragDropModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
