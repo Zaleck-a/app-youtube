@@ -1,10 +1,10 @@
 <app-navbar></app-navbar>
 <div class="row">
-  <div [ngStyle]="{'display': getDisplay()}" class="col-3 animate__animated animate__fadeIn">
+  <div [ngStyle]="{'opacity': getDisplay(), 'width': getWidth()}" class="pe-0 pt-2" style="transition: all 0.1s ease">
     <app-list></app-list>
   </div>
 
-  <div class="col">
+  <div class="col p-0">
     <div class="container mt-3">
       <app-results></app-results>
     </div>

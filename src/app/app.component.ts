@@ -15,9 +15,16 @@ export class AppComponent {
 
   getDisplay(){
     if(this.dataService.valueDisplay()){
-      return 'none';
+      return '1';
     }else{
-      return 'block';
+      return '0';
+    }
+  }
+  getWidth(){
+    if(this.dataService.valueDisplay()){
+      return '30%';
+    }else{
+      return '0%';
     }
   }
 
