@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid d-flex justify-content-between flex-nowrap">
         <div class="d-flex">
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <button class="btn" type="button" (click)="isShow()">
                 <i class="fas fa-bars"></i>
             </button>
             <a class="navbar-brand ms-2" href="#">
@@ -10,7 +10,7 @@
             </a>
         </div>
 
-        <div class="col-lg-10 col-md-8">
+        <div class="col-md-8">
             <div class="d-flex">
                 <input #share (keyup.enter)="shared(share.value)" 
                        class="form-control" 
@@ -24,4 +24,3 @@
     </div>
 </nav>
 
-<app-list></app-list>

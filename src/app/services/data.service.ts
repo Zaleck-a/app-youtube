@@ -9,6 +9,7 @@ import { map } from "rxjs/operators";
 })
 export class DataService {
 
+  display: boolean = false;
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
   private apiKey = 'AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc';
   //AIzaSyAUWtvdPrUgrDo-tE9MjR3lHcfsUtV1pZw
@@ -16,6 +17,17 @@ export class DataService {
   private nextPageToken = '';
 
   constructor( private http: HttpClient) {}
+
+  getShow(value :boolean){
+    this.display = value;
+    
+  }
+
+  
+  valueDisplay() {
+    return this.display
+  }
+  
 
 
   getVideos(){

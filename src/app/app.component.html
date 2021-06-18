@@ -1,4 +1,12 @@
 <app-navbar></app-navbar>
-<div class="container mt-3">
-  <app-results></app-results>
+<div class="row">
+  <div [ngStyle]="{'display': getDisplay()}" class="col-3 animate__animated animate__fadeIn">
+    <app-list></app-list>
+  </div>
+
+  <div class="col">
+    <div class="container mt-3">
+      <app-results></app-results>
+    </div>
+  </div>
 </div>
