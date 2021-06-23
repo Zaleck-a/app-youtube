@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { YoutubeResponse } from '../models/youtube.models';
 
 import { map } from "rxjs/operators";
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,9 @@ export class DataService {
 
   display: boolean = false;
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
-  private apiKey = 'AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc';
+  private apiKey = 'AIzaSyAUWtvdPrUgrDo-tE9MjR3lHcfsUtV1pZw';
   //AIzaSyAUWtvdPrUgrDo-tE9MjR3lHcfsUtV1pZw
+  //AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc
   private search = 'thewekend';
   private nextPageToken = '';
 
@@ -30,7 +32,7 @@ export class DataService {
   
 
 
-  getVideos(){
+/*   getVideos(){
 
     const url = `${this.youtubeUrl}/search`
     const params = new HttpParams().set('part', 'snippet')
@@ -48,5 +50,17 @@ export class DataService {
                  })
                )
 
+  } */
+
+  public drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      return;
+    } else {
+      transferArrayItem(event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+    }
   }
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Item } from 'src/app/models/youtube.models';
 import { DataService } from 'src/app/services/data.service';
 import Swal from 'sweetalert2';
@@ -17,16 +18,16 @@ export class ResultsComponent implements OnInit {
   constructor( private data: DataService) { }
 
   ngOnInit(): void {
-    this.getItems();
+    // this.getItems();
   }
 
-  getItems(){
+  /* getItems(){
     this.data.getVideos().subscribe( res => {
       
       this.items.push( ...res );
       console.log(this.items);
     })
-  }
+  } */
 
   viewVideo(item: Item){
     Swal.fire({
@@ -41,6 +42,10 @@ export class ResultsComponent implements OnInit {
               </iframe>
             `
     })
+  }
+
+  onDrop(event: CdkDragDrop<any>) {
+    this.data.drop(event);
   }
 
 }

@@ -1,5 +1,7 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col animate__animated animate__fadeIn" *ngFor="let item of items">
+<div class="row row-cols-1 row-cols-md-3 g-4" 
+     cdkDropList
+     [cdkDropListData]="items">
+    <div class="col animate__animated animate__fadeIn" *ngFor="let item of items" cdkDrag>
       <div class="card">
         <img (click)="viewVideo(item)" [src]="item.snippet.thumbnails.high.url" class="card-img-top cursor" alt="...">
         <div class="card-body">
@@ -17,18 +19,11 @@
     </div>
     
 </div>
-<div class="card box" cdkDrag style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-<div class="row mt-5 mb-5 text-center">
+<!-- <div class="row mt-5 mb-5 text-center">
     <div class="col">
         <button class="btn btn-primary btn-lg"
                 (click)="getItems()">
             Mas videos...
         </button>
     </div>
-</div>
+</div> -->
