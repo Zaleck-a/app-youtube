@@ -18,16 +18,16 @@ export class ResultsComponent implements OnInit {
   constructor( private data: DataService) { }
 
   ngOnInit(): void {
-    // this.getItems();
+    this.getItems();
   }
 
-  /* getItems(){
+  getItems(){
     this.data.getVideos().subscribe( res => {
       
       this.items.push( ...res );
       console.log(this.items);
     })
-  } */
+  }
 
   viewVideo(item: Item){
     Swal.fire({

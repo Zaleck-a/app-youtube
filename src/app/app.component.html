@@ -1,14 +1,14 @@
-<app-navbar></app-navbar>
+<div class="row mb-4">
+  <app-navbar class="pe-0"></app-navbar>
+</div>
 <div cdkDropListGroup>
   <div class="row">
-    <div [ngStyle]="{'opacity': getDisplay(), 'width': getWidth()}" class="pe-0 pt-2" style="transition: all 0.1s ease">
+    <div [ngStyle]="{'opacity': getDisplay(), 'width': getWidth()}" style="transition: all 0.1s ease">
       <app-list></app-list>
     </div>
   
     <div class="col p-0">
-      <div class="container mt-3">
         <app-results></app-results>
-      </div>
     </div>
   </div>
 </div>

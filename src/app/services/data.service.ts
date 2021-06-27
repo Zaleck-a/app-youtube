@@ -12,7 +12,7 @@ export class DataService {
 
   display: boolean = false;
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
-  private apiKey = 'AIzaSyAUWtvdPrUgrDo-tE9MjR3lHcfsUtV1pZw';
+  private apiKey = 'AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc';
   //AIzaSyAUWtvdPrUgrDo-tE9MjR3lHcfsUtV1pZw
   //AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc
   private search = 'thewekend';
@@ -32,12 +32,12 @@ export class DataService {
   
 
 
-/*   getVideos(){
+  getVideos(){
 
     const url = `${this.youtubeUrl}/search`
     const params = new HttpParams().set('part', 'snippet')
                                    .set('q', this.search)
-                                   .set('maxResults', '9')
+                                   .set('maxResults', '3')
                                    .set('key', this.apiKey)
                                    .set('pageToken', this.nextPageToken)
 
@@ -50,11 +50,11 @@ export class DataService {
                  })
                )
 
-  } */
+  }
 
-  public drop(event: CdkDragDrop<string[]>) {
+  public drop(event: CdkDragDrop<any>) {
     if (event.previousContainer === event.container) {
-      return;
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       transferArrayItem(event.previousContainer.data,
         event.container.data,

@@ -1,12 +1,11 @@
-
-<div class="container mt-2">
+<div class="container">
     <h1>Playlist</h1>
     <hr>
     <ul class="list-group-item"
         cdkDropList
         [cdkDropListData]="playlist"
         (cdkDropListDropped)="onDrop($event)">
-        <li class="card m-2" *ngFor="let video of playlist" cdkDrag>
+        <li class="card" *ngFor="let video of playlist" cdkDrag>
             <img [src]="video.snippet.thumbnails.high.url"
                 class="card-img-top" alt="...">
             <div class="p-1">
@@ -15,7 +14,20 @@
         </li>
     </ul>
     <div class="d-grid gap-2 col-12 mx-auto">
-        <button class="btn btn-danger btn-sm"><i class="fas fa-play"></i></button>
+        <button (click)="play()" class="btn btn-danger btn-sm"><i class="fas fa-play"></i></button>
+        
+    </div>
+</div>
+
+<div *ngIf="show" class="back">
+    <div class="back-white col-md-6 text-center">
+        <h2>Playlist</h2>
+        <hr>
+        <youtube-player class="row col-12 pb-4 border-0" (ready)="savePlayer($event)"
+        (change)="onStateChange($event)" 
+        [playerVars]="playerVars">
+        </youtube-player>
+        <button (click)="stopVideo()" class="btn btn-primary">Cerrar</button>
     </div>
 </div>
 

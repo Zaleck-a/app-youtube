@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +27,8 @@ import { PlayComponent } from './pages/play/play.component';
     AppRoutingModule,
     HttpClientModule,
     ScrollingModule,
-    DragDropModule
+    DragDropModule,
+    NgxYoutubePlayerModule.forRoot()
     
   ],
   providers: [],
