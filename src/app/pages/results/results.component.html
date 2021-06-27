@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3" cdkDropList [cdkDropListData]="items"
     (cdkDropListDropped)="onDrop($event)">
-    <div class="col animate__animated animate__fadeIn" *ngFor="let item of items" cdkDrag>
+    <!-- <div class="col animate__animated animate__fadeIn mb-3" *ngFor="let item of items" cdkDrag>
       <div class="card">
         <img (click)="viewVideo(item)" [src]="item.snippet.thumbnails.high.url" class="card-img-top cursor" alt="...">
         <div class="card-body">
@@ -11,6 +11,54 @@
 
           <div class="d-grid gap-2">
             <button (click)="viewVideo(item)" class="btn btn-outline-dark">
+              Ver video
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="col animate__animated animate__fadeIn mb-3" cdkDrag>
+      <div class="card">
+        <img  class="card-img-top cursor" alt="...">
+        <div class="card-body">
+          <h5 class="title card-title">jhkjhk</h5>
+          <p class="card-text">hjkjhkg</p>
+          <p class="card-text">reyery</p>
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-dark">
+              Ver video
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col animate__animated animate__fadeIn mb-3" cdkDrag>
+      <div class="card">
+        <img  class="card-img-top cursor" alt="...">
+        <div class="card-body">
+          <h5 class="title card-title">jhkjhk</h5>
+          <p class="card-text">hjkjhkg</p>
+          <p class="card-text">reyery</p>
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-dark">
+              Ver video
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col animate__animated animate__fadeIn mb-3" cdkDrag>
+      <div class="card">
+        <img  class="card-img-top cursor" alt="...">
+        <div class="card-body">
+          <h5 class="title card-title">jhkjhk</h5>
+          <p class="card-text">hjkjhkg</p>
+          <p class="card-text">reyery</p>
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-dark">
               Ver video
             </button>
           </div>

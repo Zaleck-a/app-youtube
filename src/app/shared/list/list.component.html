@@ -1,19 +1,24 @@
 <div class="container">
     <h1>Playlist</h1>
     <hr>
-    <ul class="list-group-item"
+    <!-- <ul class="list-group list-group-horizontal-sm"
         cdkDropList
         [cdkDropListData]="playlist"
         (cdkDropListDropped)="onDrop($event)">
-        <li class="card" *ngFor="let video of playlist" cdkDrag>
+        <li class="card mb-3" *ngFor="let video of playlist" cdkDrag>
             <img [src]="video.snippet.thumbnails.high.url"
                 class="card-img-top" alt="...">
             <div class="p-1">
                 <p class="title card-title">{{video.snippet.title}}</p>
             </div>
         </li>
+    </ul> -->
+    <ul class="list-group marck pt-4 pb-4"
+        cdkDropList
+        [cdkDropListData]="playlist"
+        (cdkDropListDropped)="onDrop($event)">
     </ul>
-    <div class="d-grid gap-2 col-12 mx-auto">
+    <div class="d-grid gap-2 col-12 mx-auto mb-5">
         <button (click)="play()" class="btn btn-danger btn-sm"><i class="fas fa-play"></i></button>
         
     </div>
