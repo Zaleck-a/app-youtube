@@ -17,7 +17,7 @@ export class DataService {
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
   private apiKey = environment.apiKey2;
   
-  private search = 'thewekend';
+  private search = '';
   private nextPageToken = '';
 
   constructor( private http: HttpClient) {}
