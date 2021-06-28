@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { YoutubeResponse } from '../models/youtube.models';
+import { Item, YoutubeResponse } from '../models/youtube.models';
+
+import { environment } from '../../environments/environment';
 
 import { map } from "rxjs/operators";
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
@@ -11,10 +13,10 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 export class DataService {
 
   display: boolean = false;
+  items: Item[] = []
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
-  private apiKey = 'AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc';
-  //AIzaSyAUWtvdPrUgrDo-tE9MjR3lHcfsUtV1pZw
-  //AIzaSyDrBlt3sjdQxgNC_t2G7ZS_VqBf6zy7jOc
+  private apiKey = environment.apiKey2;
+  
   private search = 'thewekend';
   private nextPageToken = '';
 
@@ -30,7 +32,9 @@ export class DataService {
     return this.display
   }
   
-
+  setSearch(key: string){
+    this.search = key;
+  }
 
   getVideos(){
 

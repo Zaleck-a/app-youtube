@@ -64,7 +64,6 @@
 }
 
 .marck{
-    border: 1px solid red;
     margin-bottom: 10px;
     position: relative;
     display: flex;
@@ -72,9 +71,9 @@
     align-items: center;
 }
 
-.marck:hover::after{
+.marck::before{
     position: absolute;
-    content: "This is a drag & drop box.";
+    content: "Drag your videos here.";
     width: 100%;
     height: 100%;
     text-align: center;

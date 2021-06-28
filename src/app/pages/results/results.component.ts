@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Item } from 'src/app/models/youtube.models';
 import { DataService } from 'src/app/services/data.service';
 import Swal from 'sweetalert2';
@@ -12,21 +12,11 @@ import Swal from 'sweetalert2';
   ]
 })
 export class ResultsComponent implements OnInit {
+  
 
-  items: Item[] = [];
-
-  constructor( private data: DataService) { }
+  constructor( public data: DataService) { }
 
   ngOnInit(): void {
-    this.getItems();
-  }
-
-  getItems(){
-    this.data.getVideos().subscribe( res => {
-      
-      this.items.push( ...res );
-      console.log(this.items);
-    })
   }
 
   viewVideo(item: Item){

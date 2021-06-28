@@ -18,7 +18,18 @@ export class NavbarComponent implements OnInit {
   }
 
   shared(key:any){
-    console.log(key);
+    if(key === ''){
+      return;
+    }
+    this.dataService.setSearch(key);
+    this.getItems();
+  }
+
+  getItems(){
+    this.dataService.getVideos().subscribe( res => {
+      
+      this.dataService.items.push( ...res );
+    })
   }
 
   isShow(){
