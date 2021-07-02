@@ -17,7 +17,6 @@ export class ResultsComponent implements OnInit {
   constructor( public data: DataService) { }
 
   ngOnInit(): void {
-    console.log(this.data.items.length);
   }
 
   viewVideo(item: Item){
@@ -32,6 +31,13 @@ export class ResultsComponent implements OnInit {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
               </iframe>
             `
+    })
+  }
+
+  getItems(){
+    this.data.getVideos().subscribe( res => {
+      
+      this.data.items.push( ...res );
     })
   }
 

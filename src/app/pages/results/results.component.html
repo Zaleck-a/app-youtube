@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-3 bg-light pt-4 pb-4 p-2" cdkDropList [cdkDropListData]="data.items"
+  <div class="row row-cols-1 row-cols-md-3 bg-light pt-4 pb-4 p-2 scroll-containerResults" cdkDropList [cdkDropListData]="data.items"
     (cdkDropListDropped)="onDrop($event)">
     <p *ngIf="data.items.length === 0" class="w-100 text-center">Drag & drop your videos here.</p>
     <div class="col animate__animated animate__fadeIn mb-3" *ngFor="let item of data.items" cdkDrag>
@@ -29,12 +29,12 @@
     
 
   </div>
-  <!-- <div class="row mt-5 mb-5 text-center">
- <div class="col">
-     <button class="btn btn-primary btn-lg"
-             (click)="getItems()">
-         Mas videos...
-     </button>
- </div>
-</div> -->
+  <div *ngIf="data.items.length > 0" class="row mt-3 mb-3 text-center">
+    <div class="col">
+        <button class="btn btn-primary btn-lg"
+                (click)="getItems()">
+            Mas videos...
+        </button>
+    </div>
+  </div>
 </div>

@@ -65,7 +65,13 @@
 
 
 .scroll-container {
-    max-height: 100vh;
+    max-height: 400px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.scroll-containerResults {
+    max-height: 500px;
     overflow-y: auto;
     scroll-behavior: smooth;
 }
