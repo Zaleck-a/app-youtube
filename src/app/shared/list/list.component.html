@@ -1,10 +1,11 @@
 <div class="container">
     <h1>Playlist</h1>
     <hr>
-    <ul class="list-group marck pt-4 pb-4"
+    <ul class="scroll-container list-group bg-light pt-4 pb-4 p-2"
         cdkDropList
         [cdkDropListData]="playlist"
         (cdkDropListDropped)="onDrop($event)">
+        <p *ngIf="playlist.length === 0" class="w-100 text-center">Drag & drop your videos here.</p>
         <li class="card mb-3" *ngFor="let video of playlist" cdkDrag>
             <img [src]="video.snippet.thumbnails.high.url"
                 class="card-img-top" alt="...">
@@ -14,7 +15,7 @@
         </li>
     </ul>
     
-    <div class="d-grid gap-2 col-12 mx-auto mb-5">
+    <div class="d-grid gap-2 col-12 mx-auto mb-5 mt-3">
         <button (click)="play()" class="btn btn-danger btn-sm"><i class="fas fa-play"></i></button>
     </div>
 </div>

@@ -17,6 +17,7 @@ export class ResultsComponent implements OnInit {
   constructor( public data: DataService) { }
 
   ngOnInit(): void {
+    console.log(this.data.items.length);
   }
 
   viewVideo(item: Item){

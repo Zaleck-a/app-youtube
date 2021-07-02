@@ -1,6 +1,7 @@
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-3" cdkDropList [cdkDropListData]="data.items"
+  <div class="row row-cols-1 row-cols-md-3 bg-light pt-4 pb-4 p-2" cdkDropList [cdkDropListData]="data.items"
     (cdkDropListDropped)="onDrop($event)">
+    <p *ngIf="data.items.length === 0" class="w-100 text-center">Drag & drop your videos here.</p>
     <div class="col animate__animated animate__fadeIn mb-3" *ngFor="let item of data.items" cdkDrag>
       <div class="card">
         <img (click)="viewVideo(item)" [src]="item.snippet.thumbnails.high.url" class="card-img-top cursor" alt="...">
@@ -9,12 +10,12 @@
           <p class="card-text">{{item.snippet.channelTitle}}</p>
           <p class="card-text">{{item.snippet.publishTime | date}}</p>
 
-          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-            <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
-          
+          <div class="btn-group mb-3 col-12" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio1"><i class="far fa-thumbs-up"></i></label>
+
             <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
+            <label class="btn btn-outline-dark" for="btnradio2"><i class="far fa-thumbs-down"></i></label>
           </div>
 
           <div class="d-grid gap-2">

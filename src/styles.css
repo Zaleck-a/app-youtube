@@ -5,8 +5,8 @@
 .title{
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     overflow: hidden;
 }
 
@@ -63,25 +63,11 @@
     background-color: white;
 }
 
-.marck{
-    margin-bottom: 10px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.marck::before{
-    position: absolute;
-    content: "Drag your videos here.";
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-color: rgb(241, 241, 241);
-    border-color: gray;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.scroll-container {
+    max-height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 @media (max-width: 810px){
