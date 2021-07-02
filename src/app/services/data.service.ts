@@ -15,7 +15,7 @@ export class DataService {
   display: boolean = false;
   items: Item[] = []
   private youtubeUrl = 'https://youtube.googleapis.com/youtube/v3';
-  private apiKey = environment.apiKey2;
+  private apiKey = environment.apiKey1;
   
   private search = '';
   private nextPageToken = '';
